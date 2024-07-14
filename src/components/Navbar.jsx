@@ -1,13 +1,16 @@
+import Image from "next/image";
+
 const Navbar = () => {
   return (
     <div>
       <header className="flex shadow-md py-4 px-4 sm:px-10 bg-white font-[sans-serif] min-h-[70px] tracking-wide relative z-50">
         <div className="flex flex-wrap items-center justify-between gap-5 w-full">
           <a href="javascript:void(0)">
-            <img
+            <Image
               src="https://readymadeui.com/readymadeui.svg"
               alt="logo"
-              className="w-36"
+              width={144}
+              height={100}
             />
           </a>
 
@@ -38,10 +41,11 @@ const Navbar = () => {
             <ul className="lg:flex gap-x-5 max-lg:space-y-3 max-lg:fixed max-lg:bg-white max-lg:w-1/2 max-lg:min-w-[300px] max-lg:top-0 max-lg:left-0 max-lg:p-6 max-lg:h-full max-lg:shadow-md max-lg:overflow-auto z-50">
               <li className="mb-6 hidden max-lg:block">
                 <a href="javascript:void(0)">
-                  <img
+                  <Image
                     src="https://readymadeui.com/readymadeui.svg"
                     alt="logo"
-                    className="w-36"
+                    width={144}
+                    height={100}
                   />
                 </a>
               </li>
@@ -58,31 +62,15 @@ const Navbar = () => {
                   href="javascript:void(0)"
                   className="hover:text-[#007bff] text-gray-500 block font-semibold text-[15px]"
                 >
-                  Team
-                </a>
-              </li>
-              <li className="max-lg:border-b border-gray-300 max-lg:py-3 px-3">
-                <a
-                  href="javascript:void(0)"
-                  className="hover:text-[#007bff] text-gray-500 block font-semibold text-[15px]"
-                >
-                  Feature
-                </a>
-              </li>
-              <li className="max-lg:border-b border-gray-300 max-lg:py-3 px-3">
-                <a
-                  href="javascript:void(0)"
-                  className="hover:text-[#007bff] text-gray-500 block font-semibold text-[15px]"
-                >
-                  Blog
-                </a>
-              </li>
-              <li className="max-lg:border-b border-gray-300 max-lg:py-3 px-3">
-                <a
-                  href="javascript:void(0)"
-                  className="hover:text-[#007bff] text-gray-500 block font-semibold text-[15px]"
-                >
                   About
+                </a>
+              </li>
+              <li className="max-lg:border-b border-gray-300 max-lg:py-3 px-3">
+                <a
+                  href="javascript:void(0)"
+                  className="hover:text-[#007bff] text-gray-500 block font-semibold text-[15px]"
+                >
+                  Blogs
                 </a>
               </li>
               <li className="max-lg:border-b border-gray-300 max-lg:py-3 px-3">
