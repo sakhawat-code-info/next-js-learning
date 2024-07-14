@@ -1,6 +1,26 @@
+"use client";
 import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
+  const pathName = usePathname();
+
+  const links = [
+    {
+      title: "About",
+      path: "/about",
+    },
+    {
+      title: "Blogs",
+      path: "/blogs",
+    },
+    {
+      title: "Contact",
+      path: "/contact",
+    },
+  ];
+
   return (
     <div>
       <header className="flex shadow-md py-4 px-4 sm:px-10 bg-white font-[sans-serif] min-h-[70px] tracking-wide relative z-50">
@@ -49,38 +69,29 @@ const Navbar = () => {
                   />
                 </a>
               </li>
-              <li className="max-lg:border-b border-gray-300 max-lg:py-3 px-3">
-                <a
-                  href="javascript:void(0)"
-                  className="hover:text-[#007bff] text-[#007bff] block font-semibold text-[15px]"
+
+              {links.map((link) => (
+                <Link
+                  key={link.title}
+                  className={`${
+                    pathName === link.path
+                      ? "text-red-600 font-extrabold"
+                      : "text-black"
+                  }`}
+                  href={link.path}
                 >
-                  Home
-                </a>
-              </li>
-              <li className="max-lg:border-b border-gray-300 max-lg:py-3 px-3">
-                <a
-                  href="javascript:void(0)"
-                  className="hover:text-[#007bff] text-gray-500 block font-semibold text-[15px]"
-                >
-                  About
-                </a>
-              </li>
-              <li className="max-lg:border-b border-gray-300 max-lg:py-3 px-3">
-                <a
-                  href="javascript:void(0)"
-                  className="hover:text-[#007bff] text-gray-500 block font-semibold text-[15px]"
-                >
-                  Blogs
-                </a>
-              </li>
-              <li className="max-lg:border-b border-gray-300 max-lg:py-3 px-3">
+                  {link.title}
+                </Link>
+              ))}
+
+              {/* <li className="max-lg:border-b border-gray-300 max-lg:py-3 px-3">
                 <a
                   href="javascript:void(0)"
                   className="hover:text-[#007bff] text-gray-500 block font-semibold text-[15px]"
                 >
                   Contact
                 </a>
-              </li>
+              </li> */}
             </ul>
           </div>
 
