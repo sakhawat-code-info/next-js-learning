@@ -79,8 +79,8 @@ const Navbar = () => {
                   key={link.title}
                   className={`${
                     pathName === link.path
-                      ? "text-red-600 font-extrabold"
-                      : "text-black"
+                      ? "border-b border-red-800 max-lg:py-3 px-3"
+                      : "border-b border-gray-300 max-lg:py-3 px-3"
                   }`}
                   href={link.path}
                 >
